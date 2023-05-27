@@ -1,4 +1,6 @@
 import room1 from "../../public/hotel_1.jpg";
+import room2 from "../../public/hotel_2.jpg";
+import room3 from "../../public/hotel_3.jpg";
 import RoomCard from "./RoomCard/RoomCard";
 import s from "./Rooms.module.scss";
 
@@ -11,12 +13,12 @@ const RoomCardInfo = {
   Card_two: {
     name: "Room Two",
     price: " N500k per night",
-    image: room1,
+    image: room2,
   },
   Card_three: {
     name: "Room Three",
     price: " N750k per night",
-    image: room1,
+    image: room3,
   },
 };
 const Rooms = () => {
