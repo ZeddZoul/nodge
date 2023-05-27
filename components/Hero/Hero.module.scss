@@ -1,0 +1,28 @@
+@import "../../styles/variables";
+.Hero{
+  padding: 15% 10%;
+  text-align: center;
+  background-image: linear-gradient( to bottom right,#0000009b, #0000004b), url("../../public/hotel_1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  h2,p{
+
+    color:#fff;
+  }
+  h2{
+    padding: 10px 10%;
+    font-size: 57px;
+    @media (max-width: $brk--lg) {
+      padding: 10px 2%;
+      font-size: 34px;
+    }
+  }
+  p{
+    max-width: 650px;
+    margin: auto;
+    @media (max-width: $brk--lg) {
+      font-size: 15px;
+    }
+  };
+}

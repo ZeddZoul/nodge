@@ -1,0 +1,26 @@
+.RoomCard{
+  width: max-content;
+  border-radius: 4px;
+  width: 28%;
+  padding: 4px;
+  cursor: pointer;
+  transition: transform .3s linear;
+  &:hover{
+    transform: translateY(-10px);
+  }
+  background-color: #e9dbcb;
+  img{
+    width: 100%;
+height: auto;
+border-radius: 4px;
+  }
+  >div{
+    margin-block: 10px;
+gap: 5px;
+    display: flex;
+    flex-direction: column;
+    h4, h3{
+      color:#080716;
+    }
+  }
+}

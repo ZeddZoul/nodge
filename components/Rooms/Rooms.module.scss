@@ -1,0 +1,18 @@
+.Rooms{
+ display: flex;
+ flex-direction: column;
+ gap: 25px;
+ text-align: center;
+padding: 4% 10%;
+ justify-content: center;
+ align-items: center;
+ h2{
+  font-size: 35px;
+  color: #a8865f;
+ }
+  >div:last-child{
+    display:flex;
+    justify-content: space-between;
+
+  }
+}

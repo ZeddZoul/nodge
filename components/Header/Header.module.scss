@@ -1,0 +1,48 @@
+@import "../../styles/variables";
+.Header{
+  padding: 10px 2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 1px 0px 5px #a8865f5f;
+  >.logo{
+    display: flex;
+    gap: 5px;
+    align-items: flex-end;
+    h1{
+      font-family: $font--logo;
+      @media (max-width: $brk--lg) {
+font-size: 23px;
+      }
+    }
+    >img{
+      height: 40px;
+      width: auto;
+    }
+  }
+  >div:last-child{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: $color--secondary;
+    width: max-content;
+    padding: 8px 16px;
+    border-radius: 50px;
+    @media (max-width: $brk--lg) {
+      padding: 6px 12px;
+      font-size: 14px;
+            }
+    p{
+      
+      color: white;
+    }
+  }
+  nav{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    @media (max-width: $brk--lg) {
+     display: none;
+            }
+  }
+}

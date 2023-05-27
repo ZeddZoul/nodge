@@ -1,0 +1,18 @@
+@import "./variables";
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Kelly+Slab&family=Raleway:wght@100;200;300;400;500;600;800;900&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+h1, h2, h3, h4{
+   font-family: $font--header;
+}
+p, span, a, small, strong{
+  font-family: $font--normal;
+  font-weight: 500;
+  color: $color--secondary;
+}
