@@ -1,18 +1,25 @@
+@import "../../styles/variables";
 .Rooms{
  display: flex;
  flex-direction: column;
  gap: 25px;
  text-align: center;
-padding: 4% 10%;
- justify-content: center;
+ padding: 4% 10%;
+ justify-content: space-around;
  align-items: center;
+
  h2{
-  font-size: 35px;
-  color: #a8865f;
- }
+   font-size: 35px;
+   color: #a8865f;
+  }
   >div:last-child{
     display:flex;
     justify-content: space-between;
-
+    
+    flex-wrap: wrap;
+    @media (max-width:$brk--lg) {
+     
+      justify-content: center;
+    }
   }
 }

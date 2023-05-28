@@ -1,10 +1,14 @@
+@import "../../../styles/variables";
 .RoomCard{
   width: max-content;
   border-radius: 4px;
   width: 28%;
+  min-width: 240px;
   padding: 4px;
+  margin: 15px;
   cursor: pointer;
   transition: transform .3s linear;
+ 
   &:hover{
     transform: translateY(-10px);
   }
@@ -21,6 +25,26 @@ gap: 5px;
     flex-direction: column;
     h4, h3{
       color:#080716;
+    }
+    p{
+      @media (max-width: $brk--lg) {
+        font-size: 13.33px;
+        
+      }
+      font-size: 15px;
+    }
+    button{
+      transition: background .25s linear;
+      padding: 8px 16px;
+      border-radius: 4px;
+      width: 90%;
+      margin: 5px auto;
+      background-color:darken($color:  #e9dbcb, $amount: 10);
+       border: none;
+       &:hover{
+        background-color: darken($color: #e9dbcb, $amount: 15) ;
+        cursor: pointer;
+       }
     }
   }
 }

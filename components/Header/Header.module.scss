@@ -24,7 +24,7 @@ font-size: 23px;
     display: flex;
     align-items: center;
     gap: 5px;
-    background-color: $color--secondary;
+    background-color:#e9dbcb;
     width: max-content;
     padding: 8px 16px;
     border-radius: 50px;
@@ -34,7 +34,8 @@ font-size: 23px;
             }
     p{
       
-      color: white;
+      // color: white;
+      font-weight: 600;
     }
   }
   nav{

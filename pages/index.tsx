@@ -3,6 +3,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Hero from '../components/Hero'
 import Rooms from '@/components/Rooms'
+import FAQ from '@/components/FAQ'
 
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
       <Header />
       <Hero />
       <Rooms />
+      <FAQ />
       <Footer />
     </>
   )

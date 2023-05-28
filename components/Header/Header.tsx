@@ -18,7 +18,7 @@ const Header = () => {
         <Link href="./"  >Lodges</Link>
         <Link href="./"  >Reach Us</Link>
       </nav>
-     <div><p>Bookings</p> <RiLuggageCartFill fontSize={35} color="#fff" /></div>
+     <div><p>Bookings</p> <RiLuggageCartFill fontSize={35} /></div>
     </div>
   );
 };
