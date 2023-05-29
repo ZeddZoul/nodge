@@ -23,11 +23,16 @@ const RoomCardInfo = {
   },
 };
 const Rooms = () => {
-  const [cart, setCart] = useState<{}[]>([])
+  const [cart, setCart] = useState<{ name: string, price: number }[]>([])
   const addToCart = ({ name, price }: { name: string, price: number }) => {
-    let item = { name, price }
-    const arr = [...cart, item]
-    setCart(arr)
+var exists = false
+    cart.forEach((item) => {
+      item.name === name ?
+        exists = true : null
+    })
+
+    !exists ? setCart([...cart, { name, price }]) : null
+    console.log(cart)
   }
   return (
     <section className={s.Rooms}>
