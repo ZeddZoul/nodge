@@ -28,7 +28,8 @@ const RoomCardInfo = {
   },
 };
 interface RoomProps{
-  addToCart : ({}:RoomCardProps) => void
+  addToCart: ({ }: RoomCardProps) => void
+
 }
 const Rooms = ({addToCart}: RoomProps) => {
 

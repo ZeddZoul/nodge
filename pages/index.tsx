@@ -29,7 +29,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/nodge_logo.png" />
       </Head>
-      <Header showCart={() => setShow(true)} />
+      <Header badge={cart.length} showCart={() => setShow(true)} />
       <Hero />
       <Rooms addToCart={addToCart} />
       <FAQ />

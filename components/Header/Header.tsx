@@ -6,8 +6,9 @@ import { RiLuggageCartFill } from "react-icons/ri";
 import Link from "next/link";
 interface HeaderProps {
   showCart: () => void
+  badge: number
 }
-const Header = ({showCart}:HeaderProps) => {
+const Header = ({ showCart, badge }: HeaderProps) => {
   return (
     <div className={s.Header}>
       <div className={s.logo}>
@@ -21,7 +22,7 @@ const Header = ({showCart}:HeaderProps) => {
         <Link href="./"  >Lodges</Link>
         <Link href="./"  >Reach Us</Link>
       </nav>
-     <div onClick={showCart}><p>Bookings</p> <RiLuggageCartFill fontSize={35} /></div>
+      <div onClick={showCart}><p>Bookings</p> <RiLuggageCartFill fontSize={35} /> { badge>0? <p className={s.badge}> {badge}</p> : <></>}</div>
     </div>
   );
 };
