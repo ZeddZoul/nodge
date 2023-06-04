@@ -1,0 +1,103 @@
+@import "../../styles/variables";
+.Cart {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  width: 100%;
+  min-height: 100vh;
+  .top {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 4%;
+    box-shadow: 0px 1px 5px #e9e6e6;
+    margin-bottom: 5px;
+    h2 {
+      font-family: $font--logo;
+      @media (max-width: $brk--lg) {
+        font-size: 23px;
+      }
+    }
+    button {
+      padding: 10px;
+      border-radius: 50%;
+      border: 1px solid $color--primary;
+      color: white;
+      background-color: $color--primary;
+    }
+  }
+
+  label,
+  p {
+    font-weight: 600;
+    font-family: $font--normal;
+    color: #5b5a5a;
+  }
+  .bookingForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-block: 15px;
+    padding: 10px 4%;
+    div {
+      display: flex;
+      gap: 5px;
+      flex-direction: column;
+      input {
+        height: 25px;
+        border: 1px solid $color--primary;
+      }
+    }
+  }
+  .Total {
+    margin-top: 20px;
+    color: $color--primary;
+  }
+  .bookingSection {
+    padding: 10px 4%;
+    display: flex;
+    flex-direction: column;
+    gap:25px;
+    .Booking {
+      display: flex;
+      gap: 35px;
+      img{
+        max-width: 300px;
+        width: 40%;
+        height: auto;
+      }
+      div {
+        display: flex;
+        gap: 10px;
+      }
+      > span {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+
+        input[type="number"] {
+          width: 50px;
+          align-self: baseline;
+        }
+
+        button {
+          height: 25px;
+          background-color: $color--primary;
+          border: none;
+          border-radius: 5px;
+          color: white;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+  > button {
+    margin: 10px 4%;
+padding: 4px 8px;
+    height: 25px;
+    background-color: $color--primary;
+    border: none;
+    border-radius: 5px;
+    color: white;
+  }
+}

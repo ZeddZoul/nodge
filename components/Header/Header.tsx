@@ -4,7 +4,10 @@ import logo from "../../public/nodge_logo.png";
 
 import { RiLuggageCartFill } from "react-icons/ri";
 import Link from "next/link";
-const Header = () => {
+interface HeaderProps {
+  showCart: () => void
+}
+const Header = ({showCart}:HeaderProps) => {
   return (
     <div className={s.Header}>
       <div className={s.logo}>
@@ -18,7 +21,7 @@ const Header = () => {
         <Link href="./"  >Lodges</Link>
         <Link href="./"  >Reach Us</Link>
       </nav>
-     <div><p>Bookings</p> <RiLuggageCartFill fontSize={35} /></div>
+     <div onClick={showCart}><p>Bookings</p> <RiLuggageCartFill fontSize={35} /></div>
     </div>
   );
 };

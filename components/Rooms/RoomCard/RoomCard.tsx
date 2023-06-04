@@ -1,10 +1,12 @@
 import Image, { StaticImageData } from 'next/image'
 import s from './RoomCard.module.scss'
-interface RoomCardProps{
+export interface RoomCardProps{
   image: StaticImageData,
   name: string,
-  price: number
-  addToCart: ()=>void
+  price: number,
+  days: number,
+  arrival_date: string
+  addToCart?: ()=>void
 }
 const RoomCard = ( {image, name, price, addToCart} : RoomCardProps) => {
   return (

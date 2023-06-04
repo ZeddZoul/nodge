@@ -1,12 +1,26 @@
-import Head from 'next/head'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import Hero from '../components/Hero'
-import Rooms from '@/components/Rooms'
-import FAQ from '@/components/FAQ'
-
+import Head from "next/head";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import Hero from "../components/Hero";
+import Rooms from "@/components/Rooms";
+import FAQ from "@/components/FAQ";
+import Cart from "@/components/Cart";
+import { useState } from "react";
+import { RoomCardProps } from "@/components/Rooms/RoomCard/RoomCard";
 
 export default function Home() {
+  const [show, setShow] = useState(false);
+  const [cart, setCart] = useState<RoomCardProps[]>([]);
+  const addToCart = ({ name, price, image,days, arrival_date }: RoomCardProps) => {
+    var exists = false;
+    cart.forEach((item) => {
+      item.name === name ? (exists = true) : null;
+    });
+    const newCart = !exists ?[...cart, { name, price, image, days, arrival_date }] : [...cart];
+    setCart(newCart)
+    console.log(newCart)
+  };
+
   return (
     <>
       <Head>
@@ -15,11 +29,12 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/nodge_logo.png" />
       </Head>
-      <Header />
+      <Header showCart={() => setShow(true)} />
       <Hero />
-      <Rooms />
+      <Rooms addToCart={addToCart} />
       <FAQ />
       <Footer />
+      <Cart cart={cart} setCart={setCart} shown={show} hideCart={() => setShow(false)} />
     </>
-  )
+  );
 }

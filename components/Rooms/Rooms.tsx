@@ -3,37 +3,35 @@ import room2 from "../../public/hotel_2.jpg";
 import room3 from "../../public/hotel_3.jpg";
 import RoomCard from "./RoomCard/RoomCard";
 import s from "./Rooms.module.scss";
-import { useState } from "react";
-
+import { RoomCardProps } from "./RoomCard/RoomCard";
 const RoomCardInfo = {
   Card_one: {
     name: "Room One",
     price: 250,
     image: room1,
+    days: 1,
+    arrival_date: "",
   },
   Card_two: {
     name: "Room Two",
     price: 500,
     image: room2,
+    days: 1,
+    arrival_date: ""
   },
   Card_three: {
     name: "Room Three",
     price: 750,
     image: room3,
+    days: 1,
+    arrival_date: ""
   },
 };
-const Rooms = () => {
-  const [cart, setCart] = useState<{ name: string, price: number }[]>([])
-  const addToCart = ({ name, price }: { name: string, price: number }) => {
-var exists = false
-    cart.forEach((item) => {
-      item.name === name ?
-        exists = true : null
-    })
+interface RoomProps{
+  addToCart : ({}:RoomCardProps) => void
+}
+const Rooms = ({addToCart}: RoomProps) => {
 
-    !exists ? setCart([...cart, { name, price }]) : null
-    console.log(cart)
-  }
   return (
     <section className={s.Rooms}>
       <div>
