@@ -7,18 +7,36 @@ import FAQ from "@/components/FAQ";
 import Cart from "@/components/Cart";
 import { useState } from "react";
 import { RoomCardProps } from "@/components/Rooms/RoomCard/RoomCard";
+import Popup from "@/components/Popup/Popup";
 
 export default function Home() {
   const [show, setShow] = useState(false);
+  const [exists, setExists] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+  const handlePopup = () => {
+    setShowPopup(true);
+    setTimeout(() => {
+      setShowPopup(false);
+    }, 2000);
+  };
   const [cart, setCart] = useState<RoomCardProps[]>([]);
-  const addToCart = ({ name, price, image,days, arrival_date }: RoomCardProps) => {
-    var exists = false;
-    cart.forEach((item) => {
-      item.name === name ? (exists = true) : null;
+
+  const addToCart = ({
+    name,
+    price,
+    image,
+    days,
+    arrival_date,
+  }: RoomCardProps) => {
+    var a = cart.some((item) => {
+      return item.name === name;
     });
-    const newCart = !exists ?[...cart, { name, price, image, days, arrival_date }] : [...cart];
-    setCart(newCart)
-    console.log(newCart)
+    const newCart = !a
+      ? [...cart, { name, price, image, days, arrival_date }]
+      : [...cart];
+    setCart(newCart);
+    handlePopup();
+    setExists(a);
   };
 
   return (
@@ -34,7 +52,20 @@ export default function Home() {
       <Rooms addToCart={addToCart} />
       <FAQ />
       <Footer />
-      <Cart cart={cart} setCart={setCart} shown={show} hideCart={() => setShow(false)} />
+      <Cart
+        cart={cart}
+        setCart={setCart}
+        shown={show}
+        hideCart={() => setShow(false)}
+      />
+      <Popup
+        showPopup={showPopup}
+        content={
+          exists
+            ? "Room has already been booked. Go to the Bookings section to edit booking information!"
+            : "You have booked this room. Book more rooms or go to Bookings section to edit Boking information."
+        }
+      />
     </>
   );
 }

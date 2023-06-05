@@ -16,3 +16,7 @@ p, span, a, small, strong{
   font-weight: 500;
   color: $color--secondary;
 }
+::-webkit-scrollbar{
+  width: 5px;
+  background-color: #dbd8d8;
+}

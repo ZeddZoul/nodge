@@ -1,11 +1,13 @@
 @import "../../styles/variables";
 .Cart {
   position: fixed;
+  z-index: 10;
   top: 0;
   left: 0;
   background-color: white;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
+overflow-y: auto;
   .top {
     display: flex;
     justify-content: space-between;
@@ -58,9 +60,14 @@
     display: flex;
     flex-direction: column;
     gap:25px;
+    overflow-y: auto;
+    min-height: 200px;
     .Booking {
+      background-color: #e6d5b47f;
       display: flex;
       gap: 35px;
+      padding: 10px;
+      border-radius: 5px;
       img{
         max-width: 300px;
         width: 40%;

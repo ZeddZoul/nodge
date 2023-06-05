@@ -1,0 +1,27 @@
+@import "../../styles/variables";
+.Popup{
+  position: fixed;
+  top: 11vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  font-size: 13px;
+  max-width: 500px;
+
+background-color: white;
+padding: 25px;
+border-radius: 5px;
+box-shadow: 1px 1px 5px #e8e6e6ca;
+font-family: $font--normal;
+animation: fadeIn .15s linear alternate;
+@keyframes fadeIn {
+  from{
+    opacity: 0;
+scale: 0;
+  }
+  to{
+    opacity: 1;
+    scale: 1;
+  }
+}
+}

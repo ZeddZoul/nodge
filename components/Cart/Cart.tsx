@@ -27,7 +27,7 @@ const Cart = ({ shown, hideCart, cart, setCart }: CartProps) => {
     var total: number = 0;
     cart.map((item) => {
       total += item.price * item.days;
-      console.log(total);
+    
       setCartTotal(total);
     });
     cart.length == 0 && setCartTotal(total);
@@ -47,7 +47,6 @@ const Cart = ({ shown, hideCart, cart, setCart }: CartProps) => {
       // update only the current type of house
       var newItem;
       if (item.name == itemName) {
-        console.log(cart[id]);
         newItem = { ...item, [name]: value };
         const realCart = [...cart];
         realCart[id] = newItem;
