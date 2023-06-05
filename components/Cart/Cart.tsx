@@ -9,11 +9,12 @@ import { RoomCardProps } from "../Rooms/RoomCard/RoomCard";
 import s from "./Cart.module.scss";
 import { CloseButton } from "@chakra-ui/react";
 import Image from "next/image";
+import { CartItemProps } from "@/pages";
 interface CartProps {
   shown: boolean;
   hideCart: () => void;
-  setCart: Dispatch<SetStateAction<RoomCardProps[]>>;
-  cart: RoomCardProps[];
+  setCart: Dispatch<SetStateAction<CartItemProps[]>>;
+  cart: CartItemProps[];
 }
 const data = {
   name: "",
@@ -21,6 +22,8 @@ const data = {
 };
 const Cart = ({ shown, hideCart, cart, setCart }: CartProps) => {
   const [cartTotal, setCartTotal] = useState(0);
+  const [subTotal, setSubTotal] = useState(0);
+  const [VAT, setVAT] = useState(0);
   const [bookingData, setBookingData] = useState(data);
 
   const handleCostChange = () => {
@@ -28,7 +31,9 @@ const Cart = ({ shown, hideCart, cart, setCart }: CartProps) => {
     cart.map((item) => {
       total += item.price * item.days;
     
-      setCartTotal(total);
+      setSubTotal(total);
+      setVAT(total * 0.05)
+      setCartTotal(total + VAT);
     });
     cart.length == 0 && setCartTotal(total);
   };
@@ -148,7 +153,9 @@ const Cart = ({ shown, hideCart, cart, setCart }: CartProps) => {
           <p> You have not booked a room yet. Try Booking a room first</p>
         )}
 
-        <p className={s.Total}>Total: ${cartTotal}</p>
+        <p className={s.Total}>SUBTOTAL: ${subTotal}</p>
+        <p className={s.Total}>VAT (5%): ${VAT}</p>
+        <p className={s.Total}>TOTAL FEE: ${cartTotal}</p>
       </div>
       <button title={cart.length > 0 ? "Confirm Booking" : "No Bookings yet"} disabled={cart.length > 0 ? false : true}> Confirm Booking</button>
     </div>

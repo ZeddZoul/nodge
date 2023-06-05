@@ -4,46 +4,52 @@ import room3 from "../../public/hotel_3.jpg";
 import RoomCard from "./RoomCard/RoomCard";
 import s from "./Rooms.module.scss";
 import { RoomCardProps } from "./RoomCard/RoomCard";
-const RoomCardInfo = {
-  Card_one: {
-    name: "Room One",
-    price: 250,
-    image: room1,
-    days: 1,
-    arrival_date: "",
-  },
-  Card_two: {
-    name: "Room Two",
-    price: 500,
-    image: room2,
-    days: 1,
-    arrival_date: ""
-  },
-  Card_three: {
-    name: "Room Three",
-    price: 750,
-    image: room3,
-    days: 1,
-    arrival_date: ""
-  },
-};
+import { CartItemProps } from "@/pages";
+
 interface RoomProps{
-  addToCart: ({ }: RoomCardProps) => void
+  addToCart: ({ }: RoomCardProps) => void;
+  cart:CartItemProps[]
 
 }
-const Rooms = ({addToCart}: RoomProps) => {
-
+const Rooms = ({ addToCart, cart }: RoomProps) => {
+  
+  const RoomCardInfo = {
+    Card_one: {
+      id: 0,
+      name: "Room One",
+      price: 250,
+      image: room1,
+      days: 1,
+      arrival_date: "",
+    },
+    Card_two: {
+      id: 1,
+      name: "Room Two",
+      price: 500,
+      image: room2,
+      days: 1,
+      arrival_date: ""
+    },
+    Card_three: {
+      id: 2,
+      name: "Room Three",
+      price: 750,
+      image: room3,
+      days: 1,
+      arrival_date: "",
+    },
+  };
   return (
     <section className={s.Rooms}>
       <div>
       <h2>Available Rooms</h2>
-      <p>Please Select a room that you would like</p>
+      <p>Please click on a card to book the room </p>
 
      </div>
       <div>
-        <RoomCard addToCart={() => addToCart(RoomCardInfo.Card_one)} {...RoomCardInfo.Card_one} />
-        <RoomCard addToCart={()=>addToCart(RoomCardInfo.Card_two)} {...RoomCardInfo.Card_two} />
-        <RoomCard addToCart={()=>addToCart(RoomCardInfo.Card_three)} {...RoomCardInfo.Card_three} />
+        <RoomCard cart={cart} addToCart={() => addToCart(RoomCardInfo.Card_one)} {...RoomCardInfo.Card_one} />
+        <RoomCard cart={cart} addToCart={()=>addToCart(RoomCardInfo.Card_two)} {...RoomCardInfo.Card_two} />
+        <RoomCard cart={cart} addToCart={()=>addToCart(RoomCardInfo.Card_three)} {...RoomCardInfo.Card_three} />
       </div>
     </section>
   );

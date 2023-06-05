@@ -8,7 +8,15 @@ import Cart from "@/components/Cart";
 import { useState } from "react";
 import { RoomCardProps } from "@/components/Rooms/RoomCard/RoomCard";
 import Popup from "@/components/Popup/Popup";
-
+import { StaticImageData } from "next/image";
+export interface CartItemProps {
+  name:string,
+  price: number,
+  image: StaticImageData,
+  days: number,
+  arrival_date: string,
+  id: number,
+}
 export default function Home() {
   const [show, setShow] = useState(false);
   const [exists, setExists] = useState(false);
@@ -19,7 +27,7 @@ export default function Home() {
       setShowPopup(false);
     }, 2000);
   };
-  const [cart, setCart] = useState<RoomCardProps[]>([]);
+  const [cart, setCart] = useState<CartItemProps[]>([]);
 
   const addToCart = ({
     name,
@@ -27,12 +35,13 @@ export default function Home() {
     image,
     days,
     arrival_date,
-  }: RoomCardProps) => {
+    id,
+  }: CartItemProps) => {
     var a = cart.some((item) => {
       return item.name === name;
     });
     const newCart = !a
-      ? [...cart, { name, price, image, days, arrival_date }]
+      ? [...cart, { name, price, image, days, arrival_date, id }]
       : [...cart];
     setCart(newCart);
     handlePopup();
@@ -49,7 +58,7 @@ export default function Home() {
       </Head>
       <Header badge={cart.length} showCart={() => setShow(true)} />
       <Hero />
-      <Rooms addToCart={addToCart} />
+      <Rooms cart={cart} addToCart={addToCart} />
       <FAQ />
       <Footer />
       <Cart

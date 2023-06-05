@@ -9,7 +9,7 @@ import {
 import { FcMinus, FcPlus } from "react-icons/fc";
 const FAQ = () => {
   return (
-    <Accordion display={"flex"} flexDirection={"column"} gap="10px" m="4% 10%">
+    <Accordion defaultIndex={[0]} allowMultiple display={"flex"} flexDirection={"column"} gap="10px" m="4% 10%">
       <h2
         style={{
           color: "#a8865f",
