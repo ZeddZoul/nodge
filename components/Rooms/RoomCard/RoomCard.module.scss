@@ -48,3 +48,45 @@ gap: 5px;
     }
   }
 }
+.RoomOverview{
+  display: flex;
+  position: fixed;
+  align-items: center;
+  top: 0;
+  padding: 10px 4%;
+  left: 0;
+  background-color: white;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  gap: 15px;
+  img{
+    max-width: 600px;
+    width: 90%;
+    height: auto;
+  }
+  span{
+    align-self: flex-end;
+    width: max-content;
+    button{
+      background-color: $color--primary;
+      padding: 5px;
+      border-radius: 50%;
+      border: none;
+      svg{
+        padding: 2px;
+        color: white;
+      }
+    }
+  }
+  >button{
+    max-width: 250px;
+    padding: 10px 20px;
+border: none;
+background-color: $color--primary;
+color: white;
+border-radius: 5px;
+    width: 90%;
+  }
+}

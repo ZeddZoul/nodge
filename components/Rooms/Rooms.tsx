@@ -21,6 +21,7 @@ const Rooms = ({ addToCart, cart }: RoomProps) => {
       image: room1,
       days: 1,
       arrival_date: "",
+      overview: "You get one king sized bed and Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, repellendus excepturi quibusdam asperiores quas voluptas facilis iure maxime cumque soluta quae, libero nesciunt similique aut animi blanditiis reiciendis molestias consequuntur!" 
     },
     Card_two: {
       id: 1,
@@ -28,7 +29,8 @@ const Rooms = ({ addToCart, cart }: RoomProps) => {
       price: 500,
       image: room2,
       days: 1,
-      arrival_date: ""
+      arrival_date: "",
+      overview: "You get two king sized beds and Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, repellendus excepturi quibusdam asperiores quas voluptas facilis iure maxime cumque soluta quae, libero nesciunt similique aut animi blanditiis reiciendis molestias consequuntur!" 
     },
     Card_three: {
       id: 2,
@@ -37,6 +39,7 @@ const Rooms = ({ addToCart, cart }: RoomProps) => {
       image: room3,
       days: 1,
       arrival_date: "",
+      overview: "You get three king sized beds and Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, repellendus excepturi quibusdam asperiores quas voluptas facilis iure maxime cumque soluta quae, libero nesciunt similique aut animi blanditiis reiciendis molestias consequuntur!" 
     },
   };
   return (
